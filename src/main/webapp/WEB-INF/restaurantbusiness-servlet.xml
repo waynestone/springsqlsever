@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+		http://www.springframework.org/schema/util
+		http://www.springframework.org/schema/util/spring-util-3.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <!-- 引入配置文件 -->
+    <import resource="classpath:conf/core/current-context.xml" />
+    <context:component-scan base-package="com.wayne.controller" />
+    <!-- 添加注解驱动 -->
+    <mvc:annotation-driven />
+    <!-- 配置JKSON转换 因为时间转换问题添加 -->
+    <!--
+    <mvc:annotation-driven conversion-service="conversionService">
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>text/plain;charset=UTF-8</value>
+                        <value>text/html;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <ref bean="jacksonConverter" />
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean id="jacksonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+        <property name="objectMapper">
+            <bean id="jacksonMapper" class="com.restaurant.core.util.ExtandObjectMapper" />
+        </property>
+    </bean>
+    -->
+    <mvc:resources mapping="/**" location="/resources/" />
+
+
+
+    <bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+        <property name="order" value="1"></property>
+    </bean>
+
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+        <property name="order" value="2"></property>
+    </bean>
+    <!--
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8" />
+        <property name="maxInMemorySize" value="10240000" />
+    </bean>
+    -->
+</beans>
