@@ -1,5 +1,11 @@
-com/wayne/core/SpringBeanHelper.class
-com/wayne/dao/ILoginDao.class
-com/wayne/entity/Login.class
-com/wayne/core/PropertyUtils.class
-com/wayne/controller/AccountController.class
+com\wayne\dao\LoginDao.class
+com\wayne\service\LoginService.class
+com\wayne\controller\AccountController.class
+com\wayne\service\ILoginService.class
+com\wayne\dao\ILoginDao.class
+com\wayne\entity\Login.class
+com\wayne\dao\DaoBase.class
+com\wayne\core\SpringBeanHelper.class
+com\wayne\core\SqlSessionUtil.class
+com\wayne\core\PropertyUtils.class
+com\wayne\core\Services.class

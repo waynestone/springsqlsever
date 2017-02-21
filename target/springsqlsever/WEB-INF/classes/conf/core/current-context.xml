@@ -47,10 +47,7 @@
 
     <!-- 相当于将spring-datasource.xml和当前文档合并在一起，或者将这两个文件的内容合并在一起 -->
     <import resource="classpath:conf/module/spring-datasource.xml" />
+    <context:component-scan base-package="com.wayne.service" />
     <context:component-scan base-package="com.wayne.dao" />
-
-
-
-
 
 </beans>

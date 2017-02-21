@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.wayne.entity.Login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,10 +17,14 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.wayne.core.PropertyUtils;
+import com.wayne.service.ILoginService;
 //
 @Controller
 @RequestMapping("account")
 public class AccountController{
+
+    @Autowired
+    private ILoginService loginService;
 
     @ResponseBody
     @RequestMapping(value = "login", method = { RequestMethod.POST })
@@ -29,6 +34,7 @@ public class AccountController{
         String basePath = "";//PropertyUtils.getProperty("java.restaurant.url");
         String returnUrl = basePath+"/home/index";
         //response.sendRedirect(returnUrl);
+        Login login = loginService.login(username, password);
         return returnUrl;
     }
 
@@ -40,3 +46,4 @@ public class AccountController{
 
 
 }
+
