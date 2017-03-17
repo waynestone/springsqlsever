@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wayne.dao.ILoginDao" >
+    <!-- 用户登录 茹化肖 2016年6月3日14:32:09 -->
+    <select id="person" parameterType="java.util.Map" resultType="com.wayne.entity.person">
+        SELECT  * FROM person
+    </select>
+</mapper>

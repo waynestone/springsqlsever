@@ -15,6 +15,8 @@ public class LoginService implements ILoginService {
     @Override
     public Login login(String username, String password) {
         password = MD5Util.MD5(password).toUpperCase();//转大写
+        logindao.getall();
         return logindao.login(username, password);
+
     }
 }

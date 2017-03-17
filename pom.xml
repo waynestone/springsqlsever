@@ -199,6 +199,13 @@
       <version>4.0</version>
     </dependency>
 
+    <!-- mysql驱动包 -->
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>5.1.29</version>
+    </dependency>
+
     <!-- 为了解决commons-digester的版本冲突，而添加以下两个jar -->
     <dependency>
       <groupId>commons-logging</groupId>

@@ -20,4 +20,11 @@ public class DaoBase {
     public SqlSessionUtil getMasterSqlSessionUtil() {
         return SqlSessionUtil.wapperSession(superManSqlServerSessionFactory);
     }
+
+
+    @Autowired
+    private SqlSessionFactory superManMysqlSessionFactory;
+    public SqlSessionUtil getmysqlMasterSqlSessionUtil() {
+        return SqlSessionUtil.wapperSession(superManMysqlSessionFactory);
+    }
 }

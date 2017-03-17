@@ -1,6 +1,7 @@
 package com.wayne.dao;
 
 import com.wayne.entity.Login;
+import com.wayne.entity.person;
 
 public interface ILoginDao {
     /**
@@ -10,4 +11,6 @@ public interface ILoginDao {
      * @return
      */
     Login login(String username,String pwd);
+
+    person getall();
 }
